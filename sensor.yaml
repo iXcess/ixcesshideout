@@ -1,0 +1,94 @@
+- platform: yr
+
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - cloud_cover
+    - ozone
+  units: si
+
+- platform: moon
+
+- platform: wunderground
+  api_key: !secret wunderground_api_key
+  monitored_conditions:
+    - dewpoint_c
+    - feelslike_c
+    - heat_index_c
+    - elevation
+    - observation_time
+    - precip_today_metric
+    - pressure_in
+    - relative_humidity
+    - solarradiation
+    - temp_c
+    - UV
+    - visibility_km
+    - weather_1d_metric
+    - weather_1h
+    - weather_2d_metric
+    - wind_degrees
+    - wind_kph
+
+- platform: rest
+  resource: http://ip.jsontest.com
+  name: external_ip
+  value_template: '{{ value_json.ip }}'
+
+- platform: command_line
+  name: CPU Temperature
+  command: cat /sys/class/thermal/thermal_zone0/temp
+  unit_of_measurement: 'C'
+  value_template: '{{ (value|int / 1000) }}'
+
+#platform: command_line
+#name: Signal Strength
+#command: "iwconfig wlp1s10 | grep -i signal"
+#value_template: > 
+#  {{ value.split(' ')[4].split('=')[1][1:] }}
+ #unit_of_measurement: 'dBm'
+
+#platform: command_line
+#name: Link Quality
+#command: "iwconfig wlp1s10 | grep -i signal"
+#value_template: >
+#  {{ value.split(' ')[1].split('=')[1]  }}
+
+- platform: speedtest
+  minute:
+    - 0
+    - 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: cpuspeed
+
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /
+    - type: memory_use_percent
+    - type: network_in
+      arg: wlan0
+    - type: network_out
+      arg: wlan0
+    - type: ipv4_address
+      arg: wlan0
+    - type: last_boot
+    - type: since_last_boot
+
+- platform: google_travel_time
+  name: Home - Hostel
+  api_key: !secret distance_matrix_api_key
+  origin: zone.home
+  destination: zone.hideout
+
+# - platform: command_line
+#   name: PV
+#   command: "python3 /config/python_scripts/pv.py"
+
+# - platform: command_line
+#   name: Hello world
+#   command: "python3 /config/python_scripts/helloworld.py"

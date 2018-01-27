@@ -1,0 +1,10 @@
+- name: Hideout
+  latitude: 3.0706228671629203
+  longitude: 101.60350537301633
+  radius: 50
+  icon: mdi:tent
+- name: Home
+  latitude: 3.1912610
+  longitude: 101.6064427
+  radius: 50
+  icon: mdi:home

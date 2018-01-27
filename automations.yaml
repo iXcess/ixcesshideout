@@ -1,0 +1,24 @@
+- action:
+  - data:
+      entity_id: media_player.mopidy
+    service: media_player.media_play
+  - data:
+      entity_id: switch.unnamed_device
+    service: switch.turn_on
+  alias: Morning Music
+  condition: []
+  id: '1516719675069'
+  trigger:
+  - at: 08:30
+    platform: time
+- action:
+  - data:
+      entity_id: switch.unnamed_device
+    service: switch.toggle
+  alias: Testing
+  condition: []
+  id: '1517075806410'
+  trigger:
+  - above: '2'
+    entity_id: sensor.security_camera_motion
+    platform: numeric_state

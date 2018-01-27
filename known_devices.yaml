@@ -1,0 +1,126 @@
+
+lenovopc:
+  hide_if_away: false
+  icon:
+  mac: 18:CF:5E:50:37:CF
+  name: LenovoPC
+  picture:
+  track: true
+  vendor: unknown
+
+ipad:
+  hide_if_away: false
+  icon:
+  mac: 34:51:C9:B7:8D:C6
+  name: iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+orvibo:
+  hide_if_away: false
+  icon:
+  mac: AC:CF:23:8D:63:78
+  name: Orvibo
+  picture:
+  track: true
+  vendor: Hi-flying electronics technology Co.,Ltd
+
+ixcess:
+  hide_if_away: false
+  icon:
+  mac: 54:72:4F:84:4D:70
+  name: iXcess
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+geo:
+  hide_if_away: false
+  icon:
+  mac: 60:F8:1D:8A:AA:5A
+  name: Geo
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+guoshan:
+  hide_if_away: false
+  icon:
+  mac: 28:ED:6A:23:21:B4
+  name: GuoShan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+54a050aa3785:
+  hide_if_away: false
+  icon:
+  mac: 54:A0:50:AA:37:85
+  name: 54a050aa3785
+  picture:
+  track: true
+  vendor: ASUSTek COMPUTER INC.
+
+guoshanfriend:
+  hide_if_away: false
+  icon:
+  mac: 20:A6:80:D9:32:B3
+  name: GuoShan Friend
+  picture:
+  track: true
+  vendor: HUAWEI TECHNOLOGIES CO.,LTD
+
+60f189525b5a:
+  hide_if_away: false
+  icon:
+  mac: 60:F1:89:52:5B:5A
+  name: 60f189525b5a
+  picture:
+  track: true
+  vendor: unknown
+
+kentyong:
+  hide_if_away: false
+  icon:
+  mac: 5C:93:A2:D8:2B:BF
+  name: Kent Yong
+  picture:
+  track: true
+  vendor: Liteon Technology Corporation
+
+40e230259e73:
+  hide_if_away: false
+  icon:
+  mac: 40:E2:30:25:9E:73
+  name: 40e230259e73
+  picture:
+  track: true
+  vendor: unknown
+
+ac9e1725d3dd:
+  hide_if_away: false
+  icon:
+  mac: AC:9E:17:25:D3:DD
+  name: ac9e1725d3dd
+  picture:
+  track: true
+  vendor: unknown
+
+000822acc1fb:
+  hide_if_away: false
+  icon:
+  mac: 00:08:22:AC:C1:FB
+  name: 000822acc1fb
+  picture:
+  track: true
+  vendor: InPro Comm
+
+000822c03f8c:
+  hide_if_away: false
+  icon:
+  mac: 00:08:22:C0:3F:8C
+  name: 000822c03f8c
+  picture:
+  track: true
+  vendor: InPro Comm

@@ -1,0 +1,138 @@
+homeassistant:
+  name: Hideout
+  latitude: 3.0706228671629203
+  longitude: 101.60350537301633
+  elevation: 29
+  unit_system: metric
+  time_zone: Asia/Kuala_Lumpur
+  customize: !include customize.yaml
+
+# Enables iOS
+ios:
+
+# Enables MQTT
+mqtt:
+  broker: core-mosquitto
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+media_player:
+  - platform: snapcast
+    host: 192.168.0.126
+  - platform: mpd
+    name: Mopidy
+    host: 192.168.0.126
+  - platform: gstreamer
+    name: GStreamer
+    pipeline: "audioresample ! audioconvert !
+audio/x-raw,rate=48000,channels=2,format=S16LE ! wavec ! filesink
+location=/tmp/snapcast_gstreamer"
+
+notify:
+  - name: HTML5 Notification
+    platform: html5
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+
+weblink:
+  entities:
+    - name: Media Player
+      url: http://192.168.0.126:6680/moped/#/
+      icon: mdi:speaker-wireless
+
+  
+# Enables the frontend
+frontend:
+
+# IFTTT
+ifttt:
+  key: !secret ifttt_key
+ 
+# Checking for presense
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.0.1-20
+    home_interval: 1
+    consider_home: 200
+    exclude:
+      - 192.168.0.1
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: 192.168.0.126:8123
+  # ssl_certificate: /ssl/fullchain.pem
+  # ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Enable IP Webcam
+camera:
+  - platform: local_file
+    name: Security Cam
+    file_path: /share/motion/lastsnap.jpg
+#  - platform: mjpeg
+#    mjpeg_url: https://192.168.0.100:8082/
+
+android_ip_webcam:
+  - host: 192.168.0.100
+    port: 8082
+    name: Security Camera
+    sensors:
+      - motion
+      - light
+    switches:
+      - video_recording
+      - night_vision
+      - focus
+  
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+# Enables snips
+snips:
+
+# Enable google calendar
+google:
+  client_id: !secret calendar_client_id
+  client_secret: !secret calendar_client_secret
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+switch: !include switch.yaml
+zone: !include zone.yaml
+

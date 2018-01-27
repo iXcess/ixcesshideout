@@ -1,0 +1,66 @@
+2018-01-28 02:56:17 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=31 from 2018-01-27 18:55:33.287787)
+2018-01-28 02:56:22 WARNING (SyncWorker_9) [homeassistant.components.camera.local_file] Could not read camera Security Cam image from file: /share/motion/lastsnap.jpg
+2018-01-28 02:56:43 ERROR (MainThread) [homeassistant.components.sensor] Error on device update!
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_component.py", line 217, in async_add_entity
+    yield from entity.async_device_update(warning=False)
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 306, in async_device_update
+    yield from self.hass.async_add_job(self.update)
+  File "/usr/lib/python3.6/asyncio/futures.py", line 332, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 250, in _wakeup
+    future.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/sensor/cpuspeed.py", line 86, in update
+    self._state = round(float(self.info['hz_actual_raw'][0])/10**9, 2)
+KeyError: 'hz_actual_raw'
+2018-01-28 02:56:51 ERROR (SyncWorker_14) [homeassistant.components.sensor.darksky] Unable to connect to Dark Sky. 403 Client Error: Forbidden for url: https://api.darksky.net/forecast/cb6dd3ef65203a0902a83689d0c2a227/3.0706228671629203,101.60350537301633?units=si
+2018-01-28 02:56:59 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform snapcast
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_component.py", line 171, in _async_setup_platform
+    SLOW_SETUP_MAX_WAIT, loop=self.hass.loop)
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 182, in _step
+    result = coro.throw(exc)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/media_player/snapcast.py", line 79, in async_setup_platform
+    hass.loop, host, port, reconnect=True)
+  File "/usr/lib/python3.6/site-packages/snapcast/control/__init__.py", line 11, in create_server
+    yield from server.start()
+  File "/usr/lib/python3.6/site-packages/snapcast/control/server.py", line 85, in start
+    yield from self._do_connect()
+  File "/usr/lib/python3.6/site-packages/snapcast/control/server.py", line 95, in _do_connect
+    lambda: SnapcastProtocol(self._callbacks), self._host, self._port)
+  File "uvloop/loop.pyx", line 1733, in create_connection
+  File "uvloop/loop.pyx", line 1712, in uvloop.loop.Loop.create_connection
+  File "/usr/lib/python3.6/asyncio/futures.py", line 332, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 250, in _wakeup
+    future.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+ConnectionRefusedError: [Errno 111] Connection refused
+2018-01-28 02:57:00 ERROR (MainThread) [homeassistant.components.media_player] Error while setting up platform gstreamer
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_component.py", line 171, in _async_setup_platform
+    SLOW_SETUP_MAX_WAIT, loop=self.hass.loop)
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/media_player/gstreamer.py", line 40, in setup_platform
+    from gsp import GstreamerPlayer
+  File "/usr/lib/python3.6/site-packages/gsp/__init__.py", line 11, in <module>
+    import gi  # pylint: disable=import-error
+ModuleNotFoundError: No module named 'gi'
+2018-01-28 02:57:17 ERROR (SyncWorker_8) [homeassistant.components.notify.ios] The notify.ios platform was loaded but no devices exist! Please check the documentation at https://home-assistant.io/ecosystem/ios/notifications/ for more information
+2018-01-28 02:58:25 ERROR (MainThread) [homeassistant.components.tts.google] Timeout for google speech.
+2018-01-28 02:58:25 ERROR (MainThread) [homeassistant.components.tts] Error on init tts: No TTS from google for 'what are you doing'
+2018-01-28 03:00:11 ERROR (SyncWorker_19) [homeassistant.components.sensor.speedtest] Error executing speedtest: Command '['/usr/bin/python3', '/usr/lib/python3.6/site-packages/speedtest.py', '--simple']' returned non-zero exit status 1.

@@ -1,0 +1,12 @@
+sensor.yr_symbol:
+  attribution: Weather forecast from yr.no, delivered by the Norwegian Meteorol$
+    Institute and the NRK.
+  entity_picture: //api.met.no/weatherapi/weathericon/1.1/?symbol=3;content_typ$
+  friendly_name: Weather
+  
+switch.unnamed_device:
+  friendly_name: Orvibo Switch
+
+group.all_automations:
+  hidden: false
+  friendly_name: Automations

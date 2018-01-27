@@ -1,0 +1,119 @@
+# Groups
+
+travel_time:
+  name: Travel Time
+  entities:
+    - sensor.home__hostel
+
+sensors:
+  name: Weather (Home)
+  entities:
+    - sun.sun
+    - sensor.moon
+    - sensor.pws_observation_time
+    - sensor.pws_temp_c
+    - sensor.pws_feelslike_c
+    - sensor.pws_solarradiation
+    - sensor.pws_heat_index_c
+    - sensor.pws_uv
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_cloud_coverage
+    - sensor.pws_elevation
+    - sensor.pws_relative_humidity
+    - sensor.pws_precip_today_metric
+    - sensor.pws_dewpoint_c
+    - sensor.pws_pressure_in
+    - sensor.pws_visibility_km
+    - sensor.pws_wind_degrees
+    - sensor.pws_wind_kph
+    - sensor.pws_weather_1d_metric
+    - sensor.pws_weather_1h
+    - sensor.pws_weather_2d_metric
+
+internet:
+  name: Connectivity
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.external_ip
+    - sensor.ipv4_address_wlan0
+    - sensor.link_quality
+    - sensor.signal_strength
+    - sensor.received_wlan0
+    - sensor.sent_wlan0
+
+sys_monitor:
+  name: System Monitor
+  entities:
+    - sensor.cpu_temperature
+    - sensor.ram_use
+    - sensor.disk_free_
+    - sensor.since_last_boot
+
+switches:
+  name: Smart Plugs
+  entities:
+    - switch.unnamed_device
+
+presence:
+  name: Presence
+  entities:
+    - device_tracker.geo
+    - device_tracker.guoshan
+    - device_tracker.guoshanfriend
+    - device_tracker.ixcess
+    - device_tracker.kentyong
+
+connected_devices:
+  name: Connected Devices
+  entities:
+    - device_tracker.lenovopc
+    - device_tracker.ipad
+
+
+
+# Views
+
+default_view:
+  view: yes
+  name: Home
+  entities:
+    - group.presence
+    - group.all_lights
+    - group.sensors
+    - group.connected_devices
+    - group.internet
+    - group.sys_monitor
+    - group.travel_time
+    - group.switches
+
+automation_view:
+  view: yes
+  name: Automation
+  entities:
+    - group.all_automations
+
+camera_view:
+   view: yes
+   name: Surveillance
+   entities:
+     - camera.security_camera
+     - switch.security_camera_focus
+     - switch.security_camera_night_vision
+     - switch.security_camera_video_recording
+     - sensor.security_camera_light_level
+     - sensor.security_camera_motion
+
+media_player_view:
+  view: yes
+  name: Media Player
+  entities:
+    - media_player.mopidy
+    - weblink.media_player
+
+script_view:
+  view: yes
+  name: Scripts
+  entities:
+#    - script.1507647081678
